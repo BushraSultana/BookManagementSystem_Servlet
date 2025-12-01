@@ -1,0 +1,67 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>addBook</servlet-name>
+        <servlet-class>Servlet.addBook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addBook</servlet-name>
+        <url-pattern>/addBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getBook</servlet-name>
+        <servlet-class>Servlet.getBook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getBook</servlet-name>
+        <url-pattern>/getBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getBookbyId</servlet-name>
+        <servlet-class>Servlet.getBookbyID</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getBookbyId</servlet-name>
+        <url-pattern>/getBookbyId</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>removeBook</servlet-name>
+        <servlet-class>Servlet.removeBook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeBook</servlet-name>
+        <url-pattern>/removeBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateBook</servlet-name>
+        <servlet-class>Servlet.updateBook</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateBook</servlet-name>
+        <url-pattern>/updateBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>updateBook</servlet-name>
+        <url-pattern>/updateAuthor</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>updateBook</servlet-name>
+        <url-pattern>/updateBookName</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>updateBook</servlet-name>
+        <url-pattern>/updateBoth</url-pattern>
+    </servlet-mapping>
+</web-app>
