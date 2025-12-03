@@ -3,6 +3,8 @@ import Entity.Book;
 import Interface.IBookCrud;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -16,7 +18,7 @@ public class IBookCrud_Impl implements IBookCrud {
 
 
     @Override
-    public void addBook(Book book) {
+    public boolean addBook(Book book) {
         EntityManager entityManager = myConfigurationClass.getConnection().createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
@@ -25,9 +27,9 @@ public class IBookCrud_Impl implements IBookCrud {
         transaction.commit();
 
         entityManager.close();
+        return true;
 
     }
-
 
 
     @Override
@@ -57,7 +59,7 @@ public class IBookCrud_Impl implements IBookCrud {
     }
 
     @Override
-    public  List<Book> getAllBook() {
+    public List<Book> getAllBook() {
 
         EntityManager entityManager = myConfigurationClass.getConnection().createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
@@ -93,7 +95,30 @@ public class IBookCrud_Impl implements IBookCrud {
         Book book = entityManager.find(Book.class, id);
         transaction.commit();
         entityManager.close();
-        return  book;
+        return book;
+
+
+    }
+
+    @Override
+    public Book validation(Integer id, String name) {
+        EntityManager entityManager = myConfigurationClass.getConnection().createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+
+        TypedQuery<Book> q = entityManager.createQuery("SELECT b FROM Book b WHERE b.bookId = :id AND b.bookName= :name", Book.class);
+        q.setParameter("id", id);
+        q.setParameter("name", name);
+
+
+
+
+        List<Book> books = q.getResultList();
+        if (!books.isEmpty()) {
+            return books.get(0);
+        } else {
+            return null;
+        }
 
 
     }

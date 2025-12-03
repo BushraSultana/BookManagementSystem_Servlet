@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -20,8 +21,12 @@ public class addBook extends HttpServlet {
         book.setBookAuthor(req.getParameter("authorName"));
 
         IBookCrud_Impl bookImp=new IBookCrud_Impl();
-        bookImp.addBook(book);
+        boolean b=bookImp.addBook(book);
 
-        resp.getWriter().write("<h1>Servlet.Employee added sucessfully</h1>");
+        if(b){
+            // resp.sendRedirect("addBook");
+            resp.sendRedirect(req.getContextPath() + "/admin.jsp");
+
+        }
     }
 }

@@ -21,31 +21,9 @@ public class getBook extends HttpServlet {
         IBookCrud_Impl service = new IBookCrud_Impl();
         List<Book> books = service.getAllBook();  // Criteria API method you wrote
 
-        out.println("<html><body>");
-        out.println("<h2>All Books</h2>");
-
-        if (books == null || books.isEmpty()) {
-            out.println("<p>No books found.</p>");
-        } else {
-            out.println("<table border='1' cellpadding='10'>");
-            out.println("<tr>");
-            out.println("<th>ID</th>");
-            out.println("<th>Book Name</th>");
-            out.println("<th>Author</th>");
-            out.println("</tr>");
-
-            for (Book book : books) {
-                out.println("<tr>");
-                out.println("<td>" + book.getBookId() + "</td>");
-                out.println("<td>" + book.getBookName() + "</td>");
-                out.println("<td>" + book.getBookAuthor() + "</td>");
-                out.println("</tr>");
-            }
-
-            out.println("</table>");
-        }
-
-        out.println("</body></html>");
+        //this being sent to jsp as request
+        req.setAttribute("Books", books);
+        req.getRequestDispatcher("getAllBook.jsp").forward(req, resp);
     }
     }
 

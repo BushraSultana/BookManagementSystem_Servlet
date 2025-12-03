@@ -26,7 +26,6 @@ public class updateBook extends HttpServlet
         }
 
         book.updateBook(bookById);
-        resp.getWriter().write("<h1>Servlet.Employee updated sucessfully</h1>");
-
+        resp.sendRedirect(req.getContextPath() + "/admin.jsp");
     }
 }

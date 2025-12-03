@@ -2,67 +2,78 @@
 <html>
 <head>
     <title>Update Both</title>
+
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f3f2ff; /* soft lavender */
             margin: 0;
             padding: 0;
+            background: url("https://images.unsplash.com/photo-1513475382585-d06e58bcb0ea?auto=format&fit=crop&w=1400&q=80")
+                        no-repeat center center fixed;
+            background-size: cover;
         }
 
         .container {
             width: 420px;
             margin: 80px auto;
-            background: #ffffff;
             padding: 30px 25px;
-            border-radius: 12px;
-            box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.15); /* glass effect */
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+            color: #fff;
         }
 
         h2 {
             text-align: center;
-            color: #5a4fcf;
             margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         label {
-            display: block;
             font-weight: 500;
+            display: block;
             margin-bottom: 6px;
-            color: #444;
         }
 
         input[type="number"],
         input[type="text"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 15px;
             margin-bottom: 18px;
-            border: 1px solid #c9c7f5;
-            border-radius: 6px;
+            background: rgba(255,255,255,0.3);
+            color: #fff;
             outline: none;
-            font-size: 14px;
         }
 
-        input[type="number"]:focus,
-        input[type="text"]:focus {
-            border-color: #7a6ff0;
-            box-shadow: 0px 0px 5px rgba(122, 111, 240, 0.5);
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus {
+            background: rgba(255,255,255,0.4);
+            box-shadow: 0px 0px 8px rgba(255,255,255,0.6);
         }
 
         button {
             width: 100%;
-            padding: 10px;
-            background: #7a6ff0;
-            color: white;
+            padding: 12px;
+            font-size: 16px;
             border: none;
-            border-radius: 6px;
-            font-size: 15px;
+            border-radius: 12px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
             cursor: pointer;
             transition: 0.3s;
         }
 
         button:hover {
-            background: #685ee8;
+            background: rgba(0,0,0,0.7);
         }
     </style>
 </head>

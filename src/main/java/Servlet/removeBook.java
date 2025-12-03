@@ -16,6 +16,6 @@ public class removeBook extends HttpServlet {
         Integer id = Integer.parseInt(req.getParameter("id"));
         IBookCrud_Impl book = new IBookCrud_Impl();
         book.deleteBook(id);
-        resp.getWriter().write("<h1>Servlet.Employee deleted sucessfully</h1>");
+        resp.sendRedirect(req.getContextPath() + "/admin.jsp");
     }
 }
