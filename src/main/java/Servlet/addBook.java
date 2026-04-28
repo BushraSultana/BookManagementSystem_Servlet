@@ -21,7 +21,7 @@ public class addBook extends HttpServlet {
         book.setBookAuthor(req.getParameter("authorName"));
 
         IBookCrud_Impl bookImp=new IBookCrud_Impl();
-        boolean b=bookImp.addBook(book);
+        boolean b=bookImp.addBooks(book);
 
         if(b){
             // resp.sendRedirect("addBook");

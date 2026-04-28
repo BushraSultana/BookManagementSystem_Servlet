@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IBookCrud {
 
-    boolean addBook(Book book);
+    boolean addBooks(Book book);
     void updateBook(Book book);
     void deleteBook(int id);
     List<Book> getAllBook();

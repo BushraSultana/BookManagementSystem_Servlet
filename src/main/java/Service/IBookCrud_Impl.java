@@ -18,7 +18,7 @@ public class IBookCrud_Impl implements IBookCrud {
 
 
     @Override
-    public boolean addBook(Book book) {
+    public boolean addBooks(Book book) {
         EntityManager entityManager = myConfigurationClass.getConnection().createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
